@@ -18,3 +18,13 @@ console.log(countPositivesSumNegatives(testData1))
 //Output
 //[ 10, -65 ]
 //[ 8, -50 ]
+
+//Cleaner code
+function countPositivesSumNegatives(input) {
+    let posCount = input.filter(arr => arr > 0).length;
+    let negSum = input.filter(arr => arr < 0).reduce((total, value) => total + value);
+    let answer = [];
+    answer.push(posCount);
+    answer.push(negSum);
+    return answer;
+}
